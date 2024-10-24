@@ -18,6 +18,10 @@ sequelize.authenticate().then(() => {
   console.error('Unable to connect to the database: ', error);
 });
 
+app.use('/', (req, res) => {
+  res.send('Welcome to the Hedera Token Service API');
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
